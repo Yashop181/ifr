@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iframe Content</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    input, button {
-      padding: 10px;
-      margin: 10px 0;
-    }
-    #output {
-      margin-top: 10px;
-      font-size: 18px;
-      color: green;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Example</title>
+    <style>
+        /* General container styling */
+        .iframe-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Styling each iframe wrapper */
+        .iframe-wrapper {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Add padding and background */
+        .iframe-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Common iframe styling */
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        /* Different border colors */
+        #iframe-1 {
+            border: 5px solid blue;
+        }
+
+        #iframe-2 {
+            border: 5px solid green;
+        }
+
+        #iframe-3 {
+            border: 5px solid red;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            .iframe-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h2>Iframe Input Example</h2>
-  <input type="text" id="userInput" placeholder="Enter some text">
-  <button onclick="displayText()">Click Me</button>
-  
-  <div id="output"></div>
 
-  <script>
-    function displayText() {
-      const input = document.getElementById('userInput').value;
-      const output = document.getElementById('output');
-      if (input) {
-        output.textContent = "You entered: " + input;
-      } else {
-        output.textContent = "Please enter something!";
-      }
-    }
-  </script>
+    <h1 style="text-align: center;">Testing Multiple Iframes</h1>
+
+    <div class="iframe-container">
+        <!-- Iframe 1 Wrapper -->
+        <div class="iframe-wrapper">
+            <iframe id="iframe-1" class="iframe-common" title="Iframe 1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28537.395819761576!2d80.0620544!3d12.383027199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5309ea9db500ff%3A0xcf7cf17fbf7315a2!2s154PEARLBEACH%20%7C%20Beach%20House%20for%20Rent%20in%20ECR%20%7C%20Luxury%20Beach%20House!5e1!3m2!1sen!2sin!4v1727862270194!5m2!1sen!2sin" loading="lazy"></iframe>
+        </div>
+
+        <!-- Iframe 2 Wrapper -->
+        <div class="iframe-wrapper">
+            <iframe id="iframe-2" class="iframe-common" title="Iframe 2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28537.395819761576!2d80.0620544!3d12.383027199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53a7e21b8427b5%3A0x4c57e527b589d698!2sSun%20shine%20marine!5e1!3m2!1sen!2sin!4v1727862340353!5m2!1sen!2sin" loading="lazy"></iframe>
+        </div>
+
+        <!-- Iframe 3 Wrapper -->
+        <div class="iframe-wrapper">
+            <iframe id="iframe-3" class="iframe-common" title="Iframe 3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14268.531428379767!2d80.05242689134192!3d12.386071664434924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5309ae68e35497%3A0x4e29959ae866f0f9!2sSwarnabhoomi%2C%20Tamil%20Nadu%20603305!5e1!3m2!1sen!2sin!4v1727862363223!5m2!1sen!2sin" loading="lazy"></iframe>
+        </div>
+    </div>
+
 </body>
 </html>
-
