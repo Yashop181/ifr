@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iframe Example</title>
-    <style>
-        /* CSS Styling for iframes */
-        .iframe-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        iframe {
-            width: 400px;
-            height: 300px;
-            border: 2px solid #333;
-        }
-        #iframe-1 {
-            border-color: blue;
-        }
-        .iframe-2 {
-            border-color: green;
-        }
-        #iframe-3 {
-            border-color: red;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Content</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px 0;
+    }
+    #output {
+      margin-top: 10px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
 </head>
 <body>
+  <h2>Iframe Input Example</h2>
+  <input type="text" id="userInput" placeholder="Enter some text">
+  <button onclick="displayText()">Click Me</button>
+  
+  <div id="output"></div>
 
-    <h1>Testing Multiple Iframes</h1>
-
-    <div class="iframe-container">
-        <!-- Iframe 1 -->
-        <iframe id="iframe-1" class="iframe-common" title="Iframe 1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28537.395819761576!2d80.0620544!3d12.383027199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5309ea9db500ff%3A0xcf7cf17fbf7315a2!2s154PEARLBEACH%20%7C%20Beach%20House%20for%20Rent%20in%20ECR%20%7C%20Luxury%20Beach%20House!5e1!3m2!1sen!2sin!4v1727862270194!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <!-- Iframe 2 -->
-        <iframe id="iframe-2" class="iframe-common iframe-2" title="Iframe 2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28537.395819761576!2d80.0620544!3d12.383027199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53a7e21b8427b5%3A0x4c57e527b589d698!2sSun%20shine%20marine!5e1!3m2!1sen!2sin!4v1727862340353!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <!-- Iframe 3 -->
-        <iframe id="iframe-3" class="iframe-common" title="Iframe 3"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14268.531428379767!2d80.05242689134192!3d12.386071664434924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5309ae68e35497%3A0x4e29959ae866f0f9!2sSwarnabhoomi%2C%20Tamil%20Nadu%20603305!5e1!3m2!1sen!2sin!4v1727862363223!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
+  <script>
+    function displayText() {
+      const input = document.getElementById('userInput').value;
+      const output = document.getElementById('output');
+      if (input) {
+        output.textContent = "You entered: " + input;
+      } else {
+        output.textContent = "Please enter something!";
+      }
+    }
+  </script>
 </body>
 </html>
+
